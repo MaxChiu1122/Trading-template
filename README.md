@@ -90,18 +90,31 @@ Define your trading rules in Excel using this format:
 
 | Rule Type | Column A | Operator | Column B/Value | Action at | Logic Type |
 |-----------|----------|----------|----------------|-----------|------------|
-| Enter-Buy | RSI | < | 30 | Open | END |
-| Exit-long | RSI | > | 70 | Close | END |
+| Enter-Buy |	Open |	< |	Final_Price |	Open | END |
+| Enter-Sell |	Open|	> |	Final_Price |	Open | END |
+| Exit-long | Close | == |	Close |	Close |	END |
+| Exit-short | Close |	== |	Close |	Close | END |
 
 ### Indicator Builder
 
 Create custom indicators with parameter support:
 
-| Name | Function | Param1 | Param2 | Combination |
+| Indicator Name | Indicator A | Operator | Value / Param | Combination |
 |------|----------|--------|--------|-------------|
-| RSI_14 | RSI | Close | 14 | |
-| MA_Fast | SMA | Close | fast_period | |
-| Signal | | | | RSI_14 + MA_Fast |
+| Final_Price |	Oy | * | OP | + |
+| Final_Price | Hy | * | HP | + | 
+| Final_Price |	Ly | * | LP	|+ |
+| Final_Price |	Cy | * | CP | + |
+| Final_Price |	Open | * | OtP | + |
+| Final_Price	| Pt	| * | PP	| END |
+
+Create custom indicators using TA-Lib:
+
+| TA-Lib Name | TA-Lib Function | In order Indicators | In order Param |
+|------|----------|--------|--------|
+| ADX |	ADX |	Hy, Ly, Cy | ADX |
+| RSI |	RSI |	Cy |	RSI |
+| ShortEnter, middle, LongEnter |	BBANDS | Cy |	Per, Enter, Enter |
 
 ### Parameter Optimization
 
@@ -119,7 +132,6 @@ The system calculates comprehensive performance metrics:
 - **Returns**: Total and annualized returns
 - **Risk Metrics**: Sharpe ratio, Sortino ratio, max drawdown
 - **Trade Statistics**: Win rate, profit factor, average trade
-- **Risk Management**: VaR, CVaR, volatility measures
 
 ## 🎯 Strategy Types Supported
 
@@ -134,44 +146,28 @@ The system calculates comprehensive performance metrics:
 - **Hyperparameter Optimization**: Bayesian optimization with Hyperopt
 - **Multiple Objectives**: Multi-objective optimization with custom weights
 - **Robust Validation**: Separate train/test periods for each window
+- 
+Set Train-Test for optimization:
+| Settings | Value |
+|-----------|-----|
+| Train Window Size (days) | 40 |
+| Test Window Size | 20 |
+| Optimize Parameters |	Enter, Exit |
+| Objective Type | MAX |
+| Max Evaluation |	100 |
 
-## 📝 Example Usage
-
-```python
-# Load configuration from Excel
-from excel_io import read_dashboard_inputs
-
-config = read_dashboard_inputs("excel/trading_template.xlsx")
-
-# Run strategy backtest
-from strategy import parse_strategy_logic, strategy_from_logic
-
-rules = parse_strategy_logic(config["logic_table"])
-trades = strategy_from_logic(config["market_data"], rules)
-
-# Calculate performance metrics
-from performance_metrics import calculate_performance_metrics
-
-metrics = calculate_performance_metrics(trades, config["market_data"])
-print(f"Total Return: {metrics['Return [%]']:.2f}%")
-print(f"Sharpe Ratio: {metrics['Sharpe Ratio']:.2f}")
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Set optimize objection weighting: 
+| Optimization Metric |  |
+|-----------|-----|
+| AccReturn |	1 |
+| Sharpe |	|
+| Max Drawdown |	|
+| Accuracy | 2 |
+| SqrtMSE |	|
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ⚠️ Disclaimer
-
-This software is for educational and research purposes only. Past performance does not guarantee future results. Always conduct thorough testing before using any trading strategy with real money.
 
 ## 🙋‍♂️ Support
 
@@ -186,6 +182,3 @@ If you encounter any issues or have questions:
 - [Hyperopt](https://github.com/hyperopt/hyperopt) - Hyperparameter Optimization
 - [Pandas](https://github.com/pandas-dev/pandas) - Data Analysis Library
 
----
-
-**Built with ❤️ for algorithmic trading enthusiasts**
