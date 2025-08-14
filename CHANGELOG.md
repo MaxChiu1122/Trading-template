@@ -2,10 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
+## [1.0.0]
 
 ### Added
 - Initial project setup with comprehensive trading strategy framework
@@ -16,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive performance metrics calculation
 - Interactive visualization generation
 - Modular architecture with clean separation of concerns
+- Core trading strategy framework
+- Visualization capabilities
 
 ### Features
 - **Strategy Logic Builder**: Excel-based strategy rule definition
@@ -31,17 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Optimization Engine**: Hyperopt for efficient parameter search
 - **Visualization Engine**: Matplotlib and Plotly for charts
 - **Error Handling**: Comprehensive error catching and user feedback
-
-## [1.0.0]
-
-### Added
-- Core trading strategy framework
-- Excel configuration system
-- Basic backtesting functionality
-- Performance metrics calculation
-- Visualization capabilities
-
----
 
 ## Version History
 
@@ -69,4 +57,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [ ] Multi-asset strategy support
 - [ ] Cloud deployment options
 - [ ] Mobile-friendly reporting
+
 
