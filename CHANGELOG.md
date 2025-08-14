@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Visualization Engine**: Matplotlib and Plotly for charts
 - **Error Handling**: Comprehensive error catching and user feedback
 
-## [1.0.0] - 2025-01-XX
+## [1.0.0]
 
 ### Added
 - Core trading strategy framework
@@ -69,3 +69,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [ ] Multi-asset strategy support
 - [ ] Cloud deployment options
 - [ ] Mobile-friendly reporting
+
