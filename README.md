@@ -146,7 +146,7 @@ The system calculates comprehensive performance metrics:
 - **Hyperparameter Optimization**: Bayesian optimization with Hyperopt
 - **Multiple Objectives**: Multi-objective optimization with custom weights
 - **Robust Validation**: Separate train/test periods for each window
-- 
+  
 Set Train-Test for optimization:
 | Settings | Value |
 |-----------|-----|
@@ -181,4 +181,5 @@ If you encounter any issues or have questions:
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Technical Analysis Library
 - [Hyperopt](https://github.com/hyperopt/hyperopt) - Hyperparameter Optimization
 - [Pandas](https://github.com/pandas-dev/pandas) - Data Analysis Library
+
 
