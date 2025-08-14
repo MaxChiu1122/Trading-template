@@ -75,7 +75,6 @@ excel-trading-optimizer/
 ├── performance_metrics.py    # Performance calculation and analysis
 ├── excel_io.py              # Excel file I/O operations
 ├── generate_visuals.py       # Visualization and plotting
-├── update_data.py           # Market data updating utilities
 ├── requirements.txt         # Python dependencies
 ├── excel/
 │   └── trading_template.xlsx # Excel configuration template
@@ -169,17 +168,12 @@ Set optimize objection weighting:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Support
-
-If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/yourusername/excel-trading-optimizer/issues) page
-2. Create a new issue with detailed description
-3. Include your Excel configuration and error messages
 
 ## 🔗 Related Projects
 
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Technical Analysis Library
 - [Hyperopt](https://github.com/hyperopt/hyperopt) - Hyperparameter Optimization
 - [Pandas](https://github.com/pandas-dev/pandas) - Data Analysis Library
+
 
 
