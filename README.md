@@ -1,4 +1,4 @@
-# Excel Trading Optimizer
+# Trading template
 
 A comprehensive Python-based trading strategy backtester and optimizer that uses Excel for configuration and provides robust performance analysis with visualization capabilities.
 
@@ -174,6 +174,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Technical Analysis Library
 - [Hyperopt](https://github.com/hyperopt/hyperopt) - Hyperparameter Optimization
 - [Pandas](https://github.com/pandas-dev/pandas) - Data Analysis Library
+
 
 
 
